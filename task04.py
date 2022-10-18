@@ -2,6 +2,8 @@ BAD_MARK = "very bad"
 EXCELLENT_MARK = "Excllent"
 
 def get_feedback(mark):
+    if isinstance(mark, bool) or not isinstance(mark, int) or not (0 <= mark <= 10):
+        return -1
     result = EXCELLENT_MARK
     if mark <= 1:
         result = BAD_MARK
